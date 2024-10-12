@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Steve Cohn</title>
+    <style>
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation ease-in 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+        }
+
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navStyles">
+        <a class="navLinkStyles" href="index.html">HOME</a>
+        <a class="navLinkStyles" href="discography.html">DISCOGRAPHY</a>
+        <a class="navLinkStyles" href="video.html">VIDEO</a>
+        <a class="navLinkStyles" href="press.html">PRESS</a>
+        <a class="navLinkStyles" href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="fade-in main">
+        <img src="assets/pnoandbass.png" style="width: 100%;" alt="Steve Cohn playing piano with a bass player">
+        <div style="margin-top: 20px; text-align: center;">
+            email: louyk [at] hotmail [dot] com <br>
+            facebook: Steven Louis Cohn<br>
+            <a href="https://stevecohn.bandcamp.com" target="_blank">stevecohn.bandcamp.com</a><br>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.style.opacity = 1;
+            });
+        });
+    </script>
+</body>
+</html>

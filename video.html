@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Steve Cohn</title>
+    <style>
+        .fade-in {
+            opacity: 0;
+            animation: fadeInAnimation ease-in 1;
+            animation-fill-mode: forwards;
+            animation-duration: 1s;
+        }
+
+        @keyframes fadeInAnimation {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <div class="navStyles">
+        <a class="navLinkStyles" href="index.html">HOME</a>
+        <a class="navLinkStyles" href="discography.html">DISCOGRAPHY</a>
+        <a class="navLinkStyles" href="video.html">VIDEO</a>
+        <a class="navLinkStyles" href="press.html">PRESS</a>
+        <a class="navLinkStyles" href="contact.html">CONTACT</a>
+    </div>
+
+    <div class="fade-in" style="margin-top: 80px; width: 50%; margin: auto; text-align: center; margin-top: 50px">
+        <div style="display: inline-block;">
+            <iframe src="https://roulette.org/event/steve-cohn-2/" title="Steve Cohn Quartet at Roulette"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/tUAKkDZHv7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div style="display: inline-block;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/-e-5A-Evu4k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/W7AqXnHjxd0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <div style="display: inline-block;">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/3X7k2D_Zsvo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/KueL2N_CsAo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const fadeInElements = document.querySelectorAll('.fade-in');
+            fadeInElements.forEach(element => {
+                element.style.opacity = 1;
+            });
+        });
+    </script>
+</body>
+</html>

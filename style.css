@@ -1,0 +1,118 @@
+@media only screen and (min-width: 1024px) {
+    .footer .mainExtra .main  {
+      display:flex;
+      background-color: aqua;
+    }
+  }
+
+body {
+    background-color: black;
+    /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+}
+
+.navStyles {
+    display: flex;
+    justify-content: center;
+    font-style: unset;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+    margin-bottom: 15px;
+    font-size: 12px;
+}
+
+.navLinkStyles {
+    padding: 15px;
+    color: white;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.columnPadded {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 1;
+    padding-right: 15px
+}
+
+.main {
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    padding: 20px;
+    margin-bottom: 100px;
+        min-width:500px;
+    font-size: 16px;
+}
+
+.navBar{
+    margin-bottom: 0;
+    padding-bottom: 0;
+    line-height: 50px;
+    height: 50px;
+}
+
+.form-control {
+    width: 97%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5px;
+    padding: 10px
+}
+
+button {
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    font-size: 16px;
+}
+
+.times {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+}
+
+
+iframe {
+    border: 0;
+    width: 350px;
+    height: 470px; 
+    padding: 5px;
+}
+
+.navigationBar {
+    margin-right: 1000px;
+    color: greenyellow;
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+}
+
+.iframe-container {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Adds space between iframes */
+}
+
+.responsive-iframe {
+    border: 0;
+    width: 300px;
+    height: 420px;
+}
