@@ -9,18 +9,22 @@
 <body>
     
     <div class="navStyles">
-        <a class="navLinkStyles" href="index.html">HOME</a>
-        <a class="navLinkStyles" href="discography.html">DISCOGRAPHY</a>
-        <a class="navLinkStyles" href="video.html">VIDEO</a>
-        <a class="navLinkStyles" href="press.html">PRESS</a>
-        <a class="navLinkStyles" href="contact.html">CONTACT</a>
+        <div class="navRow1">
+            <a class="navLinkStyles" href="index.html"><u>HOME</u></a>
+            <a class="navLinkStyles" href="discography.html"><u>DISCOGRAPHY</u></a>
+        </div>
+        <div class="navRow2">
+            <a class="navLinkStyles" href="video.html"><u>VIDEO</u></a>
+            <a class="navLinkStyles" href="press.html"><u>PRESS</u></a>
+            <a class="navLinkStyles" href="contact.html"><u>CONTACT</u></a>
+        </div>
     </div>
     
-    <div style="width: 80%; margin: auto; display: flex; justify-content: center; margin-top: 50px;">
-        <div style="width: 40%; margin-right: 20px;">
+    <div class="content-container">
+        <div class="image-container">
             <img class="responsive-img" src="assets/profilePic.jpg" alt="Steve Cohn staring pensively">
         </div>
-        <div style="width: 60%">
+        <div class="text-container">
             The music of Steve Cohn has continually and dramatically evolved. A native of San Francisco, he performed
             as a blues pianist in Los Angeles, where he began studying the shakuhachi flute at UCLA. 
             He then spent two years in Japan, returned to study at San Francisco State University where he graduated
@@ -37,22 +41,25 @@
             He has also appeared in multimedia performances with Japanese Taiko drummers and the Elinor Coleman Dance Ensemble, and was commissioned to compose and perform an original work that premiered with the Watanabe Dance Company in Japan.  He has conducted masterclasses (including the Paris National Conservatory) and has received grants from Arts International, Meet the Composer, and the New Jersey State Council on the Arts. 
         </div>
     </div>
-    <div style="width: 50%; margin: auto; display: flex; justify-content: center; margin-top: 15px;">
+    <div class="releases-container">
         <h2>RECENT RELEASES</h2><br>
     </div>
-    <div class="iframe-container">
-        <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=2465519616/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
-            <a href="https://stevecohn.bandcamp.com/album/the-day-she-cried">The Day She Cried by Steve Cohn</a>
-        </iframe>
-        <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=3446411355/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
-            <a href="https://stevecohn.bandcamp.com/album/hyperborean">Hyperborean by Steve Cohn</a>
-        </iframe>
-        <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=3552330629/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>
-            <a href="https://carlbaugher.bandcamp.com/album/ichigo-ichie">Ichigo Ichie by Steve Cohn & Carl Baugher</a>
-        </iframe>
+    <div class="iframe-container">    
+        <div class="responsive-iframe-wrapper">        
+            <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=2465519616/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>            
+                <a href="https://stevecohn.bandcamp.com/album/the-day-she-cried">The Day She Cried by Steve Cohn</a>        
+            </iframe>    
+        </div>    
+        <div class="responsive-iframe-wrapper">        
+            <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=3446411355/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>            
+                <a href="https://stevecohn.bandcamp.com/album/hyperborean">Hyperborean by Steve Cohn</a>        
+            </iframe>    
+        </div>    
+        <div class="responsive-iframe-wrapper">        
+            <iframe class="responsive-iframe" src="https://bandcamp.com/EmbeddedPlayer/album=3552330629/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/" seamless>            
+                <a href="https://carlbaugher.bandcamp.com/album/ichigo-ichie">Ichigo Ichie by Steve Cohn & Carl Baugher</a>        
+            </iframe>    
+        </div>
     </div>
-    <script>
-        let deviceWidth = window.innerWidth;
-    </script>
 </body>
 </html>
