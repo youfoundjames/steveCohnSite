@@ -12,10 +12,26 @@
             animation-fill-mode: forwards;
             animation-duration: 1s;
         }
-
         @keyframes fadeInAnimation {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+        .iframe-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin-top: 30px; /* Adds the vertical gap */
+        }
+        .iframe-wrapper {
+            width: 100%;
+            max-width: 560px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+        }
+        .iframe-wrapper iframe {
+            width: 100%;
+            height: 100%;
         }
     </style>
 </head>
@@ -31,24 +47,23 @@
             <a class="navLinkStyles" href="contact.html"><u>CONTACT</u></a>
         </div>
     </div>
-
-    <div class="fade-in" style="margin-top: 80px; width: 50%; margin: auto; text-align: center; margin-top: 50px">
-        <div style="display: inline-block;">
-            <iframe src="https://roulette.org/event/steve-cohn-2/" title="Steve Cohn Quartet at Roulette"></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/tUAKkDZHv7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    <div class="fade-in iframe-container">
+        <div class="iframe-wrapper">
+            <iframe src="https://www.youtube.com/embed/tUAKkDZHv7s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <div style="display: inline-block;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/-e-5A-Evu4k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/W7AqXnHjxd0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.youtube.com/embed/-e-5A-Evu4k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
-
-        <div style="display: inline-block;">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/3X7k2D_Zsvo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/KueL2N_CsAo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.youtube.com/embed/W7AqXnHjxd0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.youtube.com/embed/3X7k2D_Zsvo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div class="iframe-wrapper">
+            <iframe src="https://www.youtube.com/embed/KueL2N_CsAo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
     </div>
-
     <script>
         document.addEventListener("DOMContentLoaded", function() {
             const fadeInElements = document.querySelectorAll('.fade-in');

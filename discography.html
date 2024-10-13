@@ -5,21 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Steve Cohn</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .album-covers {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .album-covers img {
+            width: 200px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .album-covers {
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            .album-covers img {
+                width: calc(50% - 20px); /* Ensure two per row */
+            }
+            table {
+                width: 100%;
+                font-size: 14px;
+                border-collapse: collapse;
+            }
+            th, td {
+                padding: 10px;
+                text-align: left;
+            }
+        }
+
+
+    </style>
 </head>
 <body>
     <div class="navStyles">
-        <a class="navLinkStyles" href="index.html">HOME</a>
-        <a class="navLinkStyles" href="discography.html">DISCOGRAPHY</a>
-        <a class="navLinkStyles" href="video.html">VIDEO</a>
-        <a class="navLinkStyles" href="press.html">PRESS</a>
-        <a class="navLinkStyles" href="contact.html">CONTACT</a>
+        <div class="navRow1">
+            <a class="navLinkStyles" href="index.html"><u>HOME</u></a>
+            <a class="navLinkStyles" href="discography.html"><u>DISCOGRAPHY</u></a>
+        </div>
+        <div class="navRow2">
+            <a class="navLinkStyles" href="video.html"><u>VIDEO</u></a>
+            <a class="navLinkStyles" href="press.html"><u>PRESS</u></a>
+            <a class="navLinkStyles" href="contact.html"><u>CONTACT</u></a>
+        </div>
     </div>
-    
-    
-    <div id="main" class="main"></div>
-
+    <div id="main" class="main">
+        <div class="album-covers">
+            <a href="https://stevecohn.bandcamp.com/album/sufi-dancers-bonus-tracks-edition"><img src="assets/disco_sufidancers.jpg" alt="Sufi Dancers"></a>
+            <a href="https://stevecohn.bandcamp.com/album/ittekimasu"><img src="assets/disco_ittekimasu.jpg" alt="Ittekimasu"></a>
+            <a href="https://stevecohn.bandcamp.com/album/bridge-over-the-x-stream"><img src="assets/disco_xstream.jpg" alt="Bridge over the x-stream"></a>
+            <a href="https://stevecohn.bandcamp.com/album/the-beggar-and-the-robot-in-diamonds"><img src="assets/disco_beggar.jpg" alt="The beggar and the robot in diamonds"></a>
+            <a href="https://carlbaugher.bandcamp.com/album/voyager"><img src="assets/disco_voyager.jpg" alt="Voyager"></a>
+            <a href="https://stevecohn.bandcamp.com/album/arts-crafts"><img src="assets/disco_artscrafts.jpg" alt="Arts & Crafts"></a>
+            <a href="https://carlbaugher.bandcamp.com/album/wind-shape"><img src="assets/disco_windshape.jpg" alt="Wind Shape"></a>
+            <a href="https://stevecohn.bandcamp.com/album/arts-crafts"><img src="assets/disco_claybird.jpg" alt="Clay bird square"></a>
+        </div>
+        <p style="font-size: 30px; margin-top: 30px; text-align: center;"><b><i>SELECTED DISCOGRAPHY</i></b></p>
+        <div style="text-align: left;">
+            <table id="discographyTable">
+            </table>
+        </div>
+    </div>
     <script>
-        const DiscographyList = [
+        const discographyList = [
             ["The Day She Cried", 2024, "Trio w/ Joe Fonda & Barry Altschul", "Modern Improvisation", "https://stevecohn.bandcamp.com/album/the-day-she-cried"],
             ["Hyperborean", 2024, "Quartet w/ James Witte-Cook, Ratzo Harris & Francisco Mela", "Modern Improvisation", "https://stevecohn.bandcamp.com/album/hyperborean"],
             ["Ichigo Ichie", 2024, "Duo w/ Carl Baugher", "Tube Room Records", "https://carlbaugher.bandcamp.com/album/ichigo-ichie"],
@@ -65,48 +115,32 @@
             ["At Home", 2021, "Solo piano", "Tube Room", "https://carlbaugher.bandcamp.com/album/at-home"],
             ["Iro Iro Volume 2 (Live at Knitting Factory)", 1998, "Quartet w/ Kevin Norton, Masahiko Kono & Tomas Ulrich", "Modern Improvisation", "https://stevecohn.bandcamp.com/album/iro-iro-band-volume-2"],
             ["Arts and Crafts: The Alternate Takes", 1984, "Trio w/ Jay Elfenbein & Chuck Fertal", "White Cow", "https://stevecohn.bandcamp.com/album/arts-crafts-the-alternate-takes"]
-
         ];
-
-        const n = 200;
-        const k = 150;
-        const m = 13;
-        const deviceWidth = window.innerWidth;
-
-        function createIframe(src, height, width) {
-            const iframe = document.createElement('iframe');
-            iframe.style.height = `${height}px`;
-            iframe.style.width = `${width}px`;
-            iframe.src = src;
-            iframe.seamless = true;
-            return iframe;
-        }
-
-        function createDiscographyTable(list) {
-            const table = document.createElement('table');
-            list.forEach(album => {
+        function populateDiscography() {
+            const table = document.getElementById('discographyTable');
+            discographyList.forEach(album => {
                 const row = document.createElement('tr');
                 row.style.padding = '5px';
-
+    
                 const titleCell = document.createElement('th');
                 titleCell.textContent = album[0];
                 row.appendChild(titleCell);
-
+    
                 const yearCell = document.createElement('td');
                 yearCell.style.paddingLeft = '15px';
                 yearCell.textContent = album[1];
                 row.appendChild(yearCell);
-
+    
                 const ensembleCell = document.createElement('td');
                 ensembleCell.style.paddingLeft = '15px';
                 ensembleCell.textContent = album[2];
                 row.appendChild(ensembleCell);
-
+    
                 const labelCell = document.createElement('td');
                 labelCell.style.paddingLeft = '15px';
                 labelCell.textContent = album[3];
                 row.appendChild(labelCell);
-
+    
                 const linkCell = document.createElement('td');
                 if (album[4]) {
                     const link = document.createElement('a');
@@ -119,98 +153,12 @@
                     linkCell.appendChild(link);
                 }
                 row.appendChild(linkCell);
-
                 table.appendChild(row);
             });
-            return table;
         }
-
-        function renderDiscography() {
-            const main = document.getElementById('main');
-            main.style.display = 'flex';
-            main.style.flexDirection = 'column';
-            main.style.backgroundColor = 'black';
-
-            if (deviceWidth > 500) {
-                const container = document.createElement('div');
-                container.style.justifyContent = 'center';
-                container.style.backgroundColor = 'black';
-
-                const iframeContainer = document.createElement('div');
-                iframeContainer.style.backgroundColor = 'black';
-
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1197871241/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1449027960/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=3525627093/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=356211210/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=3710683714/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1369519868/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=374340348/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-                iframeContainer.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=3112391955/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", n, n));
-
-                container.appendChild(iframeContainer);
-
-                const title = document.createElement('p');
-                title.style.fontSize = '30px';
-                title.style.marginTop = '30px';
-                title.style.textAlign = 'center';
-                title.innerHTML = '<b><i>SELECTED DISCOGRAPHY</i></b>';
-                container.appendChild(title);
-
-                const tableContainer = document.createElement('div');
-                tableContainer.style.textAlign = 'left';
-                tableContainer.appendChild(createDiscographyTable(DiscographyList));
-                container.appendChild(tableContainer);
-
-                main.appendChild(container);
-            } else {
-                const container = document.createElement('div');
-                container.style.display = 'flex';
-                container.style.flexDirection = 'column';
-                container.style.backgroundColor = 'black';
-
-                const rowContainer = document.createElement('div');
-                rowContainer.style.backgroundColor = 'black';
-                rowContainer.style.display = 'flex';
-                rowContainer.style.flexDirection = 'row';
-                rowContainer.style.marginLeft = '8%';
-
-                const column1 = document.createElement('div');
-                column1.style.display = 'flex';
-                column1.style.flexDirection = 'column';
-                column1.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1197871241/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-                column1.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1449027960/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-                column1.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=356211210/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-
-                const column2 = document.createElement('div');
-                column2.style.display = 'flex';
-                column2.style.flexDirection = 'column';
-                column2.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=3710683714/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-                column2.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=1369519868/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-                column2.appendChild(createIframe("https://bandcamp.com/EmbeddedPlayer/album=3112391955/size=large/bgcol=ffffff/linkcol=0687f5/minimal=true/transparent=true/", k, k));
-
-                rowContainer.appendChild(column1);
-                rowContainer.appendChild(column2);
-
-                container.appendChild(rowContainer);
-
-                const title = document.createElement('p');
-                title.style.fontSize = '15px';
-                title.style.marginTop = '30px';
-                title.style.marginLeft = '20%';
-                title.innerHTML = '<b><i>SELECTED DISCOGRAPHY</i></b>';
-                container.appendChild(title);
-
-                const table = createDiscographyTable(DiscographyList);
-                table.style.fontSize = `${m}px`;
-                container.appendChild(table);
-
-                main.appendChild(container);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', renderDiscography);
+    
+        document.addEventListener('DOMContentLoaded', populateDiscography);
     </script>
-</body>
-</html>
-
+    </body>
+    </html>
+    

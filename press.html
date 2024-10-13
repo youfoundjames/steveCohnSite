@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="navStyles">
         <div class="navRow1">
             <a class="navLinkStyles" href="index.html"><u>HOME</u></a>
@@ -19,101 +18,44 @@
             <a class="navLinkStyles" href="contact.html"><u>CONTACT</u></a>
         </div>
     </div>
-
-    <div id="main" style="margin-top: 50px"></div>
-
-    <script>
-        const deviceWidth = window.innerWidth;
-
-        function createIframe(src, title) {
-            const iframe = document.createElement('iframe');
-            iframe.src = src;
-            iframe.title = title;
-            return iframe;
-        }
-
-        function createImage(src, alt, width = "100%") {
-            const img = document.createElement('img');
-            img.src = src;
-            img.alt = alt;
-            img.style.width = width;
-            return img;
-        }
-
-        function createQuote(text, author) {
-            const quote = document.createElement('div');
-            quote.innerHTML = `${text} <br><i>${author}</i><br><br>`;
-            return quote;
-        }
-
-        function renderPress() {
-            const main = document.getElementById('main');
-
-            if (deviceWidth > 500) {
-                const container = document.createElement('div');
-                container.style.width = "50%";
-                container.style.margin = "auto";
-                container.style.display = "flex";
-                container.style.justifyContent = "center";
-
-                const leftColumn = document.createElement('div');
-
-                const quotes = document.createElement('div');
-                quotes.style.paddingRight = "30px";
-                quotes.appendChild(createQuote("“Cohn’s intricate counterpoint and drama-infused harmonies are equally effective on muscular jazz-hued sprints and pointilistic passages. His cogent use of ethnic instruments goes well beyond stock poses of texture and transcendentalism. There are few American pianists who have Cohn’s talents.”", "Bill Shoemaker, Downbeat Magazine"));
-                quotes.appendChild(createQuote("If there are nine ways to play jazz, this guy plays the eleventh.", "Barry Schaffer, saxophonist"));
-                quotes.appendChild(createQuote("Passion is key and it's unmistakable in Cohn's performances on piano, percussion, and a handful of Asian wind instruments. Cohn organizes his sounds against sturdy concepts... [his] episodic adventures range from seemingly spontaneous melodies that magically harmonize to wide-open spaces that give birth to tension filled dramas.", "Sam Prestiani, Jazziz"));
-                const rouletteImage = createImage('assets/roulette.jpg', 'Steve Cohn playing piano at Roulette');
-                rouletteImage.style.marginBottom = "20px";
-                leftColumn.appendChild(rouletteImage);
-                leftColumn.appendChild(quotes);
-                leftColumn.style.marginRight = "30px";
-
-                const rightColumn = document.createElement('div');
-                rightColumn.style.fontSize = "18px";
-                rightColumn.appendChild(createQuote("A 'total music' that is an emblem of what is the world of sounds today.", "Vittorio Lo Conte, MusicZoom"));
-                rightColumn.appendChild(createQuote("Steve Cohn is easily the most underrated improviser in America. His albums are unfailingly complex and fascinating, but what really sets Cohn apart is the depth of his inspiration and the passion of his music. Nobody and I mean nobody taps into their muse with more insight or creativity. Steve Cohn is the great hidden secret of American jazz.", "Carl Baugher, Goldmine & Tracking Angle"));
-                const shockedImage = createImage('assets/shocked.png', 'Steve Cohn is shocked');
-                shockedImage.style.marginBottom = "20px";
-                rightColumn.appendChild(shockedImage);
-                rightColumn.appendChild(createQuote("I would say he is the Jackson Pollock of the Shakuhachi world, bravely brandishing wild energetic splashes of adventurous tones. His playing shows a kind of freedom that can happen when personal vision breaks the boundaries of tradition. Anyone with an open mind will benefit from his workshop.", "Perry Yung, shakuhachi maker"));
-                rightColumn.appendChild(createQuote("Moving and magical. There's Mary Lou Williams, Bud Powell, Ursula Oppens, and Steve Cohn.", "Tony Martin, painter"));
-                
-
-                container.appendChild(leftColumn);
-                container.appendChild(rightColumn);
-
-                main.appendChild(container);
-
-                const bottomImage = createImage('assets/shakuhachi.jpg', 'Steve Cohn playing shakuhachi');
-                bottomImage.style.margin = "auto";
-                main.appendChild(bottomImage);
-
-            } else {
-                const container = document.createElement('div');
-                container.style.display = "flex";
-                container.style.justifyContent = "center";
-                container.style.flexDirection = 'column';
-                container.style.width = '80%';
-                container.style.alignItems = 'center';
-                container.style.margin = 'auto';
-
-                container.appendChild(createQuote("“Cohn’s intricate counterpoint and drama-infused harmonies are equally effective on muscular jazz-hued sprints and pointilistic passages. His cogent use of ethnic instruments goes well beyond stock poses of texture and transcendentalism. There are few American pianists who have Cohn’s talents.”", "Bill Shoemaker, Downbeat Magazine"));
-                container.appendChild(createQuote("A 'total music' that is an emblem of what is the world of sounds today.", "Vittorio Lo Conte, MusicZoom"));
-                container.appendChild(createQuote("Steve Cohn is easily the most underrated improviser in America. His albums are unfailingly complex and fascinating, but what really sets Cohn apart is the depth of his inspiration and the passion of his music. Nobody and I mean nobody taps into their muse with more insight or creativity. Steve Cohn is the great hidden secret of American jazz.", "Carl Baugher, Goldmine & Tracking Angle"));
-                container.appendChild(createImage('assets/shocked.png', 'Steve Cohn is shocked', "100%"));
-                container.appendChild(createQuote("Passion is key and it's unmistakable in Cohn's performances on piano, percussion, and a handful of Asian wind instruments. Cohn organizes his sounds against sturdy concepts... [his] episodic adventures range from seemingly spontaneous melodies that magically harmonize to wide-open spaces that give birth to tension filled dramas.", "Sam Prestiani, Jazziz"));
-                container.appendChild(createQuote("I would say he is the Jackson Pollock of the Shakuhachi world, bravely brandishing wild energetic splashes of adventurous tones. His playing shows a kind of freedom that can happen when personal vision breaks the boundaries of tradition. Anyone with an open mind will benefit from his workshop.", "Perry Yung, shakuhachi maker"));
-                container.appendChild(createQuote("Moving and magical. There's Mary Lou Williams, Bud Powell, Ursula Oppens, and Steve Cohn.", "Tony Martin, painter"));
-                container.appendChild(createQuote("If there are nine ways to play jazz, this guy plays the eleventh.", "Barry Schaffer, saxophonist"));
-                container.appendChild(createImage('assets/roulette.jpg', 'Steve Cohn playing piano at Roulette', "100%"));
-                container.appendChild(createImage('assets/shakuhachi.jpg', 'Steve Cohn playing shakuhachi', "100%"));
-
-                main.appendChild(container);
-            }
-        }
-
-        document.addEventListener('DOMContentLoaded', renderPress);
-    </script>
+    <div id="main" class="main">
+        <div class="content-container">
+            <div class="column">
+                <div class="quote">
+                    “Cohn’s intricate counterpoint and drama-infused harmonies are equally effective on muscular jazz-hued sprints and pointilistic passages. His cogent use of ethnic instruments goes well beyond stock poses of texture and transcendentalism. There are few American pianists who have Cohn’s talents.” 
+                    <br><i>Bill Shoemaker, Downbeat Magazine</i><br><br>
+                </div>
+                <div class="quote">
+                    If there are nine ways to play jazz, this guy plays the eleventh. 
+                    <br><i>Barry Schaffer, saxophonist</i><br><br>
+                </div>
+                <div class="quote">
+                    Passion is key and it's unmistakable in Cohn's performances on piano, percussion, and a handful of Asian wind instruments. Cohn organizes his sounds against sturdy concepts... [his] episodic adventures range from seemingly spontaneous melodies that magically harmonize to wide-open spaces that give birth to tension filled dramas. 
+                    <br><i>Sam Prestiani, Jazziz</i><br><br>
+                </div>
+                <img src="assets/roulette.jpg" alt="Steve Cohn playing piano at Roulette" class="responsive-img">
+            </div>
+            <div class="column">
+                <div class="quote">
+                    A 'total music' that is an emblem of what is the world of sounds today. 
+                    <br><i>Vittorio Lo Conte, MusicZoom</i><br><br>
+                </div>
+                <div class="quote">
+                    Steve Cohn is easily the most underrated improviser in America. His albums are unfailingly complex and fascinating, but what really sets Cohn apart is the depth of his inspiration and the passion of his music. Nobody and I mean nobody taps into their muse with more insight or creativity. Steve Cohn is the great hidden secret of American jazz. 
+                    <br><i>Carl Baugher, Goldmine & Tracking Angle</i><br><br>
+                </div>
+                <img src="assets/shocked.png" alt="Steve Cohn is shocked" class="responsive-img" style="margin-bottom: 20px;">
+                <div class="quote">
+                    I would say he is the Jackson Pollock of the Shakuhachi world, bravely brandishing wild energetic splashes of adventurous tones. His playing shows a kind of freedom that can happen when personal vision breaks the boundaries of tradition. Anyone with an open mind will benefit from his workshop. 
+                    <br><i>Perry Yung, shakuhachi maker</i><br><br>
+                </div>
+                <div class="quote">
+                    Moving and magical. There's Mary Lou Williams, Bud Powell, Ursula Oppens, and Steve Cohn. 
+                    <br><i>Tony Martin, painter</i><br><br>
+                </div>
+            </div>
+        </div>
+        <img src="assets/shakuhachi.jpg" alt="Steve Cohn playing shakuhachi" class="responsive-img" style="margin-top: 20px;">
+    </div>
 </body>
 </html>
