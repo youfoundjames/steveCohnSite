@@ -12,31 +12,22 @@
             justify-content: center;
             gap: 20px;
         }
+
         .album-covers img {
             width: 200px;
             cursor: pointer;
         }
+
         @media (max-width: 768px) {
-            .album-covers {
-                flex-direction: row;
-                flex-wrap: wrap;
-                justify-content: space-between;
+            .album-covers a {
+                flex: 1 1 calc(50% - 20px); /* Ensure two per row on mobile */
+                max-width: calc(50% - 20px);
             }
+
             .album-covers img {
-                width: calc(50% - 20px); /* Ensure two per row */
-            }
-            table {
                 width: 100%;
-                font-size: 14px;
-                border-collapse: collapse;
-            }
-            th, td {
-                padding: 10px;
-                text-align: left;
             }
         }
-
-
     </style>
 </head>
 <body>
